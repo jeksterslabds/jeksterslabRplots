@@ -28,7 +28,9 @@ library(jeksterslabRplots)
   x = rnorm(n = 100, mean = 100, sd = 15)
 )
 #'
-#+ testthat
+#' ## With Normal Curve, Kernel Density Plot, and Legend
+#' 
+#+
 expect_error(
   object = .hist.plot(
     x = rnorm(n = 100, mean = 100, sd = 15)
@@ -41,6 +43,10 @@ expect_error(
   ),
   regexp = NA
 )
+#'
+#' ## With Normal Curve, and Kernel Density Plot
+#' 
+#+
 expect_error(
   object = .hist.plot(
     x = rnorm(n = 100, mean = 100, sd = 15),
@@ -55,6 +61,10 @@ expect_error(
   ),
   regexp = NA
 )
+#'
+#' ## With Normal Curve, and Legend
+#' 
+#+
 expect_error(
   object = .hist.plot(
     x = rnorm(n = 100, mean = 100, sd = 15),
@@ -69,6 +79,10 @@ expect_error(
   ),
   regexp = NA
 )
+#'
+#' ## With Kernel Density Plot, and Legend
+#' 
+#+
 expect_error(
   object = .hist.plot(
     x = rnorm(n = 100, mean = 100, sd = 15),
