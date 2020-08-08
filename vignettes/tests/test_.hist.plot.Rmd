@@ -1,36 +1,46 @@
-#' ---
-#' title: "Tests: .hist.plot"
-#' author: "Ivan Jacob Agaloos Pesigan"
-#' date: "`r Sys.Date()`"
-#' output: rmarkdown::html_vignette
-#' vignette: >
-#'   %\VignetteIndexEntry{Tests: .hist.plot}
-#'   %\VignetteEngine{knitr::rmarkdown}
-#'   %\VignetteEncoding{UTF-8}
-#' ---
-#'
-#+ include = FALSE
+---
+title: "Tests: .hist.plot"
+author: "Ivan Jacob Agaloos Pesigan"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Tests: .hist.plot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r include = FALSE}
 knitr::opts_chunk$set(
   error = TRUE,
   collapse = TRUE,
   comment = "#>",
   out.width = "100%"
 )
-#'
-#'
-#'
-#+ echo = FALSE
+```
+
+
+
+
+
+```{r echo = FALSE}
 library(testthat)
 library(jeksterslabRplots)
-#'
-#+ eval = FALSE
+```
+
+
+
+```{r eval = FALSE}
 .hist.plot(
   x = rnorm(n = 100, mean = 100, sd = 15)
 )
-#'
-#' ## With Normal Curve, Kernel Density Plot, and Legend
-#'
-#+
+```
+
+
+## With Normal Curve, Kernel Density Plot, and Legend
+
+
+```{r }
 expect_error(
   object = .hist.plot(
     x = rnorm(n = 100, mean = 100, sd = 15)
@@ -43,10 +53,13 @@ expect_error(
   ),
   regexp = NA
 )
-#'
-#' ## With Normal Curve, and Kernel Density Plot
-#'
-#+
+```
+
+
+## With Normal Curve, and Kernel Density Plot
+
+
+```{r }
 expect_error(
   object = .hist.plot(
     x = rnorm(n = 100, mean = 100, sd = 15),
@@ -61,10 +74,13 @@ expect_error(
   ),
   regexp = NA
 )
-#'
-#' ## With Normal Curve, and Legend
-#'
-#+
+```
+
+
+## With Normal Curve, and Legend
+
+
+```{r }
 expect_error(
   object = .hist.plot(
     x = rnorm(n = 100, mean = 100, sd = 15),
@@ -79,10 +95,13 @@ expect_error(
   ),
   regexp = NA
 )
-#'
-#' ## With Kernel Density Plot, and Legend
-#'
-#+
+```
+
+
+## With Kernel Density Plot, and Legend
+
+
+```{r }
 expect_error(
   object = .hist.plot(
     x = rnorm(n = 100, mean = 100, sd = 15),
@@ -97,10 +116,13 @@ expect_error(
   ),
   regexp = NA
 )
-#'
-#' ## plot = FALSE
-#'
-#+
+```
+
+
+## plot = FALSE
+
+
+```{r }
 expect_error(
   object = .hist.plot(
     x = rexp(n = 100),
@@ -108,10 +130,13 @@ expect_error(
   ),
   regexp = NA
 )
-#'
-#' ## freq = TRUE
-#'
-#+
+```
+
+
+## freq = TRUE
+
+
+```{r }
 expect_error(
   object = .hist.plot(
     x = rexp(n = 100),
@@ -119,3 +144,5 @@ expect_error(
   ),
   regexp = NA
 )
+```
+
