@@ -1,0 +1,32 @@
+---
+title: "Introduction to jeksterslabRplots"
+author: "Ivan Jacob Agaloos Pesigan"
+date: "`r Sys.Date()`"
+description: >
+  Learn how to get started with the basics of jeksterslabRplots.
+output:
+  rmarkdown::html_vignette:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{Introduction to jeksterslabRplots}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+`jeksterslabRplots` is a collection of functions I find useful in studying base plots.
+
+## Installation
+
+You can install the released version of `jeksterslabRplots` from [GitHub](https://github.com/jeksterslabds/jeksterslabRplots) with:
+
+```r
+library(devtools)
+install_github("jeksterslabds/jeksterslabRplots")
+```
