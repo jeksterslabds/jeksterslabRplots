@@ -73,28 +73,66 @@
   )
   if (isTRUE(normalcurve) & isTRUE(plot)) {
     x <- x[!is.na(x)]
-    xfit <- seq(min(x), max(x), length = 1000)
-    yfit <- dnorm(xfit, mean = mean(x), sd = sd(x))
+    xfit <- seq(
+      min(x),
+      max(x),
+      length = 1000
+    )
+    yfit <- dnorm(
+      xfit,
+      mean = mean(x),
+      sd = sd(x)
+    )
     if (isTRUE(freq) | (is.null(freq) & is.null(density))) {
       yfit <- yfit * diff(h$mids[1:2]) * length(x)
     }
-    lines(x = xfit, y = yfit, col = "blue", lty = 2)
+    lines(
+      x = xfit,
+      y = yfit,
+      col = "blue",
+      lty = 2
+    )
   }
   if (isTRUE(kernel) & isTRUE(plot) & isFALSE(freq)) {
-    lines(x = density(x), col = "red", lty = 1)
+    lines(
+      x = density(x),
+      col = "red",
+      lty = 1
+    )
   }
   if (legend) {
     if (isTRUE(normalcurve) & isTRUE(plot) & isTRUE(kernel) & isFALSE(freq)) {
-      legend("topright", c("Normal Curve", "Kernel Density"), col = c("blue", "red"), lty = 2:1)
+      legend(
+        "topright",
+        c(
+          "Normal Curve",
+          "Kernel Density"
+        ),
+        col = c(
+          "blue",
+          "red"
+        ),
+        lty = 2:1
+      )
     }
     if (isTRUE(normalcurve) & isTRUE(plot) & isFALSE(kernel)) {
-      legend("topright", "Normal Curve", col = "blue", lty = 2)
+      legend(
+        "topright",
+        "Normal Curve",
+        col = "blue",
+        lty = 2
+      )
     }
     if (isFALSE(normalcurve) & isTRUE(plot) & isTRUE(kernel) & isFALSE(freq)) {
-      legend("topright", "Kernel Density", col = "red", lty = 1)
+      legend(
+        "topright",
+        "Kernel Density",
+        col = "red",
+        lty = 1
+      )
     }
   }
-  if (plot == TRUE) {
+  if (plot) {
     invisible(h)
   } else {
     h
