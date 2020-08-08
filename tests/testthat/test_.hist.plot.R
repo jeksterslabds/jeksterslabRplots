@@ -83,3 +83,25 @@ expect_error(
   ),
   regexp = NA
 )
+#'
+#' ## plot = FALSE
+#'
+#+
+expect_error(
+  object = .hist.plot(
+    x = rexp(n = 100),
+    plot = FALSE
+  ),
+  regexp = NA
+)
+#'
+#' ## freq = TRUE
+#'
+#+
+expect_error(
+  object = .hist.plot(
+    x = rexp(n = 100),
+    freq = TRUE
+  ),
+  regexp = NA
+)
